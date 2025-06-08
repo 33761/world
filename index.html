@@ -65,7 +65,7 @@
     }
 
     .world p, .terms p {
-      font-size: 18px;
+      font-size: 16px;
       line-height: 1.8;
       text-align: left;
     }
@@ -110,7 +110,7 @@
     }
 
     .card p {
-      font-size: 15px;
+      font-size: 14px;
       color: #ccc;
     }
 
@@ -125,6 +125,25 @@
 
     .term strong {
       color: #ff99cc;
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        width: 100%;
+        max-width: 90%;
+      }
+
+      .hero-section h1 {
+        font-size: 36px;
+      }
+
+      .section-title {
+        font-size: 24px;
+      }
+
+      .card p, .world p, .terms p, .intro p {
+        font-size: 14px;
+      }
     }
   </style>
 </head>
@@ -160,7 +179,7 @@
     </div>
   </section>
 
-<section class="terms">
+  <section class="terms">
     <h2 class="section-title">地方勢力</h2>
     <div class="term">
       <p><strong>伊波納：</strong> 屬於政府默許的非營利組織，也是執行人體改造計劃和部署梅拉涅爾的陣營。</p>
@@ -179,7 +198,7 @@
       <div class="card">
         <img src="https://upload-os-bbs.hoyolab.com/upload/2023/12/20/179680069/154b2f42d37493ca18b39a6a9e3090e1_8035799299613948137.png" alt="里">
         <h3>里</h3>
-        <p>梅拉涅爾的二把手，不善使用武器，但屬完全異能者，能力極強，可暫時阻止生物行動，也能急殺牠們。</p>
+        <p>梅拉涅爾的二把手，不善使用武器，但屬完全異能者，能力極強，可暫時阻止生物行動，也能擊殺牠們。</p>
       </div>
       <div class="card">
         <img src="https://upload-os-bbs.hoyolab.com/upload/2023/12/20/179680069/2eae3fd87d72d168524d5e78097907be_6222453387743008196.png" alt="阡">
@@ -190,6 +209,21 @@
         <img src="https://upload-os-bbs.hoyolab.com/upload/2023/12/20/179680069/586cf93849e342e6e8f9788057b3c7db_1717354457531635766.png" alt="律">
         <h3>律</h3>
         <p>晶叢完全適配體，能力更偏向輔助阻止生物行動，但本性脾氣火爆，衝動下的殺傷力足以擊殺生物。</p>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/id/1015/400/300" alt="嵐">
+        <h3>嵐</h3>
+        <p>來自山脈邊境的孤狼型戰士，擁有操控風壓的能力，是隊伍中的游擊主力。</p>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/id/1016/400/300" alt="涅亞">
+        <h3>涅亞</h3>
+        <p>前研究機構成員，擅長戰術規劃與支援部署，是隊伍的大腦與後勤指揮。</p>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/id/1018/400/300" alt="珀">
+        <h3>珀</h3>
+        <p>擁有未知晶核的神秘人物，行蹤飄忽不定，戰鬥方式無法被預測。</p>
       </div>
     </div>
   </section>
