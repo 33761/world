@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>梅拉涅爾｜簡化版介紹頁</title>
+  <title>梅拉涅爾｜柚家世界觀介紹</title>
   <style>
     body {
       margin: 0;
@@ -10,6 +10,25 @@
       background-color: #0e0e0e;
       color: white;
       text-align: center;
+    }
+
+    nav {
+      background-color: #1a1a1a;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #ff99cc;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
     }
 
     .hero-section {
@@ -44,7 +63,7 @@
       background-color: #e60055;
     }
 
-    .intro, .world, .terms, .characters {
+    .intro, .terms, .characters {
       padding: 50px 20px;
       max-width: 1000px;
       margin: 0 auto;
@@ -64,7 +83,7 @@
       text-align: center;
     }
 
-    .world p, .terms p {
+    .terms p {
       font-size: 16px;
       line-height: 1.8;
       text-align: left;
@@ -78,10 +97,21 @@
     }
 
     .character-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 30px;
+    }
+
+    @media (max-width: 900px) {
+      .character-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .character-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .card {
@@ -141,17 +171,110 @@
         font-size: 24px;
       }
 
-      .card p, .world p, .terms p, .intro p {
+      .card p, .terms p, .intro p {
         font-size: 14px;
       }
+    }
+
+    /* 🔔 彈窗樣式 */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.6);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .popup-content {
+      background-color: #1a1a1a;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 90%;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 0 30px rgba(255, 85, 136, 0.3);
+      position: relative;
+    }
+
+    .popup-content h2 {
+      color: #ff99cc;
+      margin-bottom: 10px;
+    }
+
+    .popup-content p {
+      font-size: 14px;
+      margin-bottom: 20px;
+      color: #eee;
+    }
+
+    .popup-link {
+      display: inline-block;
+      background-color: #ff3366;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
+    .popup-link:hover {
+      background-color: #e60055;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .social {
+      padding: 50px 0;
+      background: #0a0a0a;
+    }
+
+    .social h2 {
+      font-size: 32px;
+      color: #ff6699; /* 改成粉紅色 */
+      margin-bottom: 20px;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .social-icons a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+    }
+
+    .social-icons img {
+      width: 50px;
+      height: 50px;
     }
   </style>
 </head>
 <body>
+  <nav>
+    <a href="#world">世界觀</a>
+    <a href="#factions">地方勢力</a>
+    <a href="#terms">關鍵名詞</a>
+    <a href="#characters">角色介紹</a>
+  </nav>
+
   <header class="hero-section">
     <h1>梅拉涅爾</h1>
     <p class="tagline">成為能力者，為故鄉奮戰</p>
-    <a href="#" class="download-button">立即安裝</a>
+    <a href="javascript:void(0)" class="download-button" onclick="showPopup()">立即安裝</a>
   </header>
 
   <section class="intro">
@@ -159,14 +282,14 @@
     <p>這是款關於一群不被公開的晶石能力者們，為守護故鄉而挺身出征的遊戲。</p>
   </section>
 
-  <section class="world">
+  <section id="world" class="terms">
     <h2 class="section-title">世界觀介紹</h2>
     <p>
       在《梅拉涅爾》的世界中，維度裂縫的降臨使不屬於這個世界的生物來到人類的故鄉，人類不再是獵食者，反而成為底層獵物；為了生存，人們從伴隨裂縫而來的高維晶叢中萃取來自高維度的能量，並實行人體改造計畫，將高維能量注入適配者身體，進而成為異能者守護故鄉。
     </p>
   </section>
 
-  <section class="terms">
+  <section id="terms" class="terms">
     <h2 class="section-title">關鍵名詞</h2>
     <div class="term">
       <p><strong>高維晶叢：</strong> 源自比人類世界維度更高的礦石，礦石具有異能量。</p>
@@ -179,7 +302,7 @@
     </div>
   </section>
 
-  <section class="terms">
+  <section id="factions" class="terms">
     <h2 class="section-title">地方勢力</h2>
     <div class="term">
       <p><strong>伊波納：</strong> 屬於政府默許的非營利組織，也是執行人體改造計劃和部署梅拉涅爾的陣營。</p>
@@ -192,7 +315,7 @@
     </div>
   </section>
 
-  <section class="characters">
+  <section id="characters" class="characters">
     <h2 class="section-title">角色介紹</h2>
     <div class="character-grid">
       <div class="card">
@@ -224,7 +347,35 @@
         <img src="https://picsum.photos/id/1018/400/300" alt="珀">
         <h3>珀</h3>
         <p>擁有未知晶核的神秘人物，行蹤飄忽不定，戰鬥方式無法被預測。</p>
-      </div>
+    </div>
+  </section>
+
+  <!-- 🔔 彈出視窗區域 -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closePopup()">&times;</span>
+      <h2>前往安裝頁面</h2>
+      <p>請點擊下方連結進行安裝：</p>
+      <a href="https://sharnifish.github.io/nottouch/" target="_blank" class="popup-link">👉 點我安裝</a>
+    </div>
+  </div>
+
+  <!-- 📜 彈窗腳本 -->
+  <script>
+    function showPopup() {
+      document.getElementById("popup").style.display = "flex";
+    }
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+  </script>
+
+  <section class="social">
+    <h2 class="section-title">社群連結</h2>
+    <div class="social-icons">
+      <a href="https://facebook.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook"></a>
+      <a href="https://instagram.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram"></a>
+      <a href="https://youtube.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"></a>
     </div>
   </section>
 </body>
